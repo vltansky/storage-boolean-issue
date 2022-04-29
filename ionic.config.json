@@ -1,0 +1,7 @@
+{
+  "name": "barrel-test",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
