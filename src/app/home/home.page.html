@@ -5,6 +5,20 @@
 </ion-header>
 
 <ion-content>
-  <div id="map"></div>
+  <swiper
+  [slidesPerView]="1"
+  [pagination]="{
+    clickable: true
+  }"
+  [speed]="400"
+  [loop]="true"
+  [initialSlide]="0"
+  [autoplay]="true"
+  class="slider-swiper"
+>
+  <ng-template swiperSlide *ngFor="let slide of imageList; let i = index">
+    <img [src]="slide" />
+  </ng-template>
+</swiper>
 
 </ion-content>
