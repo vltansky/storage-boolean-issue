@@ -4,21 +4,12 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <swiper
-  [slidesPerView]="1"
-  [pagination]="{
-    clickable: true
-  }"
-  [speed]="400"
-  [loop]="true"
-  [initialSlide]="0"
-  [autoplay]="true"
-  class="slider-swiper"
->
-  <ng-template swiperSlide *ngFor="let slide of imageList; let i = index">
-    <img [src]="slide" />
+<ion-content *ngIf="isSkeletonShow">
+<swiper [config]="slideMultiMobile" >
+  <ng-template swiperSlide *ngFor="let test of [1,2,3,4,5,6]; let i = index">
+    <div>
+        HELLO
+    </div>
   </ng-template>
 </swiper>
-
 </ion-content>
