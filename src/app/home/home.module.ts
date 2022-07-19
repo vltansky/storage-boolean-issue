@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { NguCarouselModule } from '@ngu/carousel';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -15,7 +16,8 @@ import { SwiperModule } from 'swiper/angular';
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
-    SwiperModule
+    SwiperModule,
+    NguCarouselModule
   ],
   declarations: [HomePage]
 })

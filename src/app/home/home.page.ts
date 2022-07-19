@@ -1,5 +1,6 @@
 /* eslint-disable no-underscore-dangle */
-import { Component, AfterViewInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { NguCarouselStore } from '@ngu/carousel';
 import SwiperCore, { Pagination } from 'swiper';
 
 SwiperCore.use([Pagination]);
@@ -10,21 +11,28 @@ SwiperCore.use([Pagination]);
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage {
-  imageList = [];
+  carouselBanner = {
+    grid: { xs: 1, sm: 1, md: 1, lg: 1, xl: 1, all: 0 },
+    slide: 1,
+    speed: 400,
+    interval: {
+      timing: 3000,
+      initialDelay: 1000
+    },
+    point: {
+      visible: true
+    },
+    load: 2,
+    loop: true,
+    touch: true
+  };
 
-  // eslint-disable-next-line @angular-eslint/use-lifecycle-interface
-  async ngOnInit() {
-    this.imageList = await this.resolveAfterX();
-  }
+/* It will be triggered on every slide*/
+onmoveFn(data: NguCarouselStore) {
+  console.log(data);
+}
 
-  resolveAfterX(): Promise<any[]> {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve([
-          'https://img.freepik.com/free-photo/cat-white-background_155003-15381.jpg',
-          'https://img.freepik.com/premium-photo/british-shorthair-kitten-3-5-months-old-sitting-looking-up_191971-4591.jpg',
-        ]);
-      }, 2000);
-    });
-  }
+trackCarousel(_, item) {
+  return item;
+}
 }
