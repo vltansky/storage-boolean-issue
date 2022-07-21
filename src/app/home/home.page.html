@@ -1,15 +1,6 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>home</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content *ngIf="isSkeletonShow">
-<swiper [config]="slideMultiMobile" >
-  <ng-template swiperSlide *ngFor="let test of [1,2,3,4,5,6]; let i = index">
-    <div>
-        HELLO
-    </div>
-  </ng-template>
-</swiper>
+<ion-content>
+  <swiper [loop]="true" [slidesPerView]="1.2">
+    <ng-template swiperSlide> 1 </ng-template>
+    <ng-template swiperSlide> 2 </ng-template>
+  </swiper>
 </ion-content>
